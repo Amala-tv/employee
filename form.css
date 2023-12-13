@@ -36,18 +36,17 @@ body {
     margin-top: 40px;
     width: 72%;
 }
-.bg-image{
-    
+
+.img-head{
+    padding-top: 10px;
 }
-.edit-img{
-    
-}
+
 .block{
     
     /* width: 80%; */
     /* height: 100vh; */
     position: absolute;
-    top: 70%;
+    top: 450px;
     left: 50%;
     right: 50%;
     transform: translate(-50%, -50%) scale(0);
@@ -62,20 +61,23 @@ body {
 .block{
     width: 49%;
     border-radius: 12px;
-    padding: 30px 30px;
+    padding: 20px 20px;
     margin-top: 100px;
     
 }
 .head-btn{
     display: flex;
+    align-items: center;
     justify-content: space-between;
 }
-.close-button{
+
+.close{
     border: none;
-    background: transparent;
-    display: flex;
-    justify-content: flex-end;
-    font-size: 30px;
+     margin-bottom: 20px;
+    font-size: 40px;
+    border-radius: 10px;
+    background-color: #F4F7FE;
+    color: var(--secondary-color);
 }
 #overlay{
     position: fixed;
@@ -87,6 +89,7 @@ body {
     background-color: rgba(0,0,0,.5);
     pointer-events: none;
     transition: 200ms ease-in-out;
+    z-index: 5;
 }
 #overlay.active{
     opacity: 1;
@@ -106,7 +109,7 @@ body {
     color: var(--primary-text-color);
     font-size: 24px;
     letter-spacing: -0.48px;
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
 }
 .bg-colour h5{
     color: var(--secondary-color);
@@ -141,11 +144,16 @@ input::placeholder {
 }
 
 .file-upload{
+    display: flex;
     border: 2px dashed #B2BAD0;
     color: var(--input-br-color);
     border-radius: 12px;
-    padding: 1rem;
+    padding: .5rem;
     background-color: var(--input-bg-color);
+}
+#displayaddimg{
+    display: none;
+
 }
 input[type="file"]{
     display: none;
@@ -260,7 +268,76 @@ input[type="file"]{
     gap: 6px;
 }
 
-/* edit form */
+/* view form */
+.emp-details{
+    display: flex;
+    justify-content: center;
+
+}
+.img-bg{
+    width: 100%;
+}
+.bg-image{
+    margin-top: -65px;
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    border: 5px solid #fff;
+}
+.emp-details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form-name{
+    color: #2B3674;
+text-align: center;
+
+/* Body Text/ Extra-Large/ Bold */
+font-family: DM Sans;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: 32px; /* 160% */
+letter-spacing: -0.4px;
+}
+.form-email{
+    color: #707EAE;
+    text-align: center;
+
+/* Body Text/ Small/ Medium */
+font-family: DM Sans;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px; /* 171.429% */
+letter-spacing: -0.28px;
+}
+.form-table{
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-text{
+    padding: 15px;
+    width: 31%;
+    /* height: 100px; */
+    border-radius: 16px;
+    background-color: var(--background-color);
+    box-shadow: 0px 18px 40px 0px rgba(112, 144, 176, 0.12);
+     display: flex;
+     flex-direction: column;
+     /* gap: 5px; */
+     text-align: center;
+     align-items: flex-start;
+}
+.form-box{
+    width: 48%;
+}
+.form-content{
+    font-size: 16px;
+    font-weight: 500;
+}
 .dele-btns{
     background-color: #EB506C;
     color: #fff;
@@ -273,6 +350,8 @@ input[type="file"]{
 
 /* Add this to your style.css file */
 .edit-form {
+    display: flex;
+    justify-content: center;
     /* display: none; */
     /* Add your styling for the edit form */
   }
@@ -292,6 +371,7 @@ input[type="file"]{
     top: 90px;
     left: 30%;
     display: none;
+    z-index: 6;
     /* right: 50px; */
 }
 .dele-head .text{
@@ -303,11 +383,8 @@ input[type="file"]{
     display: flex;
     
 }
-.dele-head i{
-    font-size: 30px;
-    border-radius: 10px;
-    background-color: #F4F7FE;
-    color: var(--secondary-color);
+.dele-head .close-button{
+    padding: 5px 10px;
 }
 .dele-head-text{
     color: var(--primary-text-color);
@@ -321,6 +398,47 @@ input[type="file"]{
     
 }
 /* delete alertbox-end */
+/*edit image*/
+.edit-picture{
+    width: 150px;
+    height: 130px;
+    background-color: #FAFCFE;
+    border-radius: 12px;
+    padding: 15px;
+    border: 1px dashed #B2BAD0;
+}
+.get-edit-pic{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.changeimgbtn{
+    width: 100px;
+    height: 40px;
+    background-color: #EAE6FB;
+    border-radius: 15px;
+    border: none;
+    font-size: 14px;
+    font-weight: 700;
+    color: #4318FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 188px;
+    top: 147px;
+
+}
+.editdp{
+    display: flex;
+    /* justify-content: center; */
+
+    gap: 15px;
+    align-items: center;
+    /* display: none !important; */
+}
+
+/*edit image*/
 
 
 @media (max-width: 1400px){
